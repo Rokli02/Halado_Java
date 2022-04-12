@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class BaseFlow_CsvXml implements BaseFlow{
     private String[] flow;
@@ -19,7 +20,8 @@ public class BaseFlow_CsvXml implements BaseFlow{
 
    @Override
     public void setInput(Object[] obj) {
-        flow = (String[]) obj;
+        flow = Arrays.stream(obj).map(value -> value.toString()).toArray(String[]::new);
+
     }
 
     @Override

@@ -21,7 +21,7 @@ public class App
             result = runner.run(csvText);
             System.out.println(Arrays.toString(result));
         } catch(NotValidInputDataException err) {
-            System.out.println(err.getMessage());
+            System.err.println(err.getMessage());
         }
     }
 }
